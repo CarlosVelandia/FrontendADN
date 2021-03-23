@@ -1,3 +1,4 @@
+import { NavbarPage } from "e2e/src/page/navbar/navbar.po";
 import { browser } from "protractor";
 import { AppPage } from "../../app.po";
 import { CrearParque } from "../../page/parque/crear-parque.po";
@@ -5,6 +6,7 @@ import { ListarParques } from "../../page/parque/listar-parques.po";
 
 describe("Crear Parque", () => {
   let page: AppPage;
+  let navBar: NavbarPage;
   let listarParques: ListarParques;
   let crearParque: CrearParque;
   const NOMBRE = 'test parque';
@@ -17,6 +19,7 @@ describe("Crear Parque", () => {
 
   beforeEach(() => {
     page = new AppPage();
+    navBar = new NavbarPage();
     crearParque = new CrearParque();
     listarParques = new ListarParques();
   });
@@ -24,6 +27,9 @@ describe("Crear Parque", () => {
   it("Debe crear el Parque", () => {
   //arrange
     page.navigateTo();
+    browser.sleep(500);
+    navBar.clickBotonParques();
+    browser.sleep(500);
     listarParques.clickBotonCrearParque();
     browser.sleep(500);
     crearParque.clickInputNombreParque();
@@ -52,7 +58,7 @@ describe("Crear Parque", () => {
     //arrange
       page.navigateTo();
       browser.sleep(500);
-      page.clickBotonParques();
+      navBar.clickBotonParques();
       browser.sleep(500);
       listarParques.clickBotonCrearParque();
       browser.sleep(500);
