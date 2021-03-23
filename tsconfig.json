@@ -33,6 +33,15 @@
       "@producto/*": [
         "src/app/feature/producto/*"
       ],
+      "@parque/*": [
+        "src/app/feature/parque/*"
+      ],
+      "@tiquete/*": [
+        "src/app/feature/tiquete/*"
+      ],
+      "@usuario/*": [
+        "src/app/feature/usuario/*"
+      ],
       "@shared/*": [
         "src/app/shared/*"
       ]

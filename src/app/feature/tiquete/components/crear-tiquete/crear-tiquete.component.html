@@ -1,0 +1,32 @@
+<div class="container col-md-6">
+  <div class="card">
+    <div class="card-header">
+      <h3>Crear Tiquetes</h3>
+    </div>
+    <div class="card-body">
+      <form action="">
+        <div class="form-group">
+          <label for="">ID Usuario:</label>
+          <!-- <input [(ngModel)]="tiquete.idUsuario" name="idUsuario" type="text" class="form-control"> -->
+          <select [(ngModel)]="tiquete.idUsuario" [ngModelOptions]="{standalone: true}" class="form-control" required id="idUsuarios">
+            <option value="" selected  disabled>Seleccionar</option>
+            <option *ngFor="let usuario of usuarios" [value]="usuario.id">{{usuario.id}} - {{usuario.nombre}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="">ID Parque:</label>
+            <!-- <input [(ngModel)]="tiquete.idParque" name="idParque" type="text" class="form-control"> -->
+          <select [(ngModel)]="tiquete.idParque" [ngModelOptions]="{standalone: true}" class="form-control" required id="idParques" >
+            <option value="" selected  disabled>Seleccionar</option>
+            <option *ngFor="let parque of parques" [value]="parque.id">{{parque.id}} - {{parque.nombre}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="">Fecha de compra:</label>
+          <input [(ngModel)]="tiquete.fechaCompra" name="fechaCompra" type="text" class="form-control" id="fechaCompra">
+        </div>
+        <button (click)="guardarTiquete()" class="btn btn-danger" id="guardarTiquete">Crear</button>
+      </form>
+    </div>
+  </div>
+</div>

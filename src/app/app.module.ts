@@ -7,6 +7,9 @@ import { HomeComponent } from '@home/home.component';
 import { ProductoModule } from '@producto/producto.module';
 import { CoreModule } from '@core/core.module';
 import { CookieService } from 'ngx-cookie-service';
+import { UsuarioModule } from './feature/usuario/usuario.module';
+import { ParqueModule } from './feature/parque/parque.module';
+import { TiqueteModule } from './feature/tiquete/tiquete.module';
 
 
 
@@ -20,6 +23,9 @@ import { CookieService } from 'ngx-cookie-service';
     BrowserModule,
     AppRoutingModule,
     ProductoModule,
+    UsuarioModule,
+    ParqueModule,
+    TiqueteModule,
     CoreModule
   ],
   providers: [CookieService],
