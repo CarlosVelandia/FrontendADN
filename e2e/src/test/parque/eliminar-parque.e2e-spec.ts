@@ -1,4 +1,4 @@
-import { NavbarPage } from "e2e/src/page/navbar/navbar.po";
+import { NavbarPage } from "../../page/navbar/navbar.po";
 import { browser } from "protractor";
 import { AppPage } from "../../app.po";
 import { ListarParques } from "../../page/parque/listar-parques.po";

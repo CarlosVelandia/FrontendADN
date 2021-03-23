@@ -1,14 +1,14 @@
-import { NavbarPage } from "e2e/src/page/navbar/navbar.po";
-import { EditarParque } from "e2e/src/page/parque/editar-parque.po";
+import { NavbarPage } from "../../page/navbar/navbar.po";
 import { browser } from "protractor";
 import { AppPage } from "../../app.po";
 import { ListarParques } from "../../page/parque/listar-parques.po";
+import { EditarParque } from "../../page/parque/editar-parque.po";
 
 describe("Editar Parque", () => {
   let page: AppPage;
   let navBar: NavbarPage;
   let listarParques: ListarParques;
-  let editarParque: EditarParque
+  let editarParque: EditarParque;
   const NOMBRE = 'test parque';
   const CODIGO = '78901';
   const DIRECCION = 'test parque';

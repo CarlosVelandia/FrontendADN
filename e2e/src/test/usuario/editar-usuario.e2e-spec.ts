@@ -1,5 +1,5 @@
-import { NavbarPage } from "e2e/src/page/navbar/navbar.po";
-import { EditarUsuario } from "e2e/src/page/usuario/editar-usuario.po";
+import { NavbarPage } from "../../page/navbar/navbar.po";
+import { EditarUsuario } from "../../page/usuario/editar-usuario.po";
 import { browser } from "protractor";
 import { AppPage } from "../../app.po";
 import { ListarUsuarios } from "../../page/usuario/listar-usuarios.po";

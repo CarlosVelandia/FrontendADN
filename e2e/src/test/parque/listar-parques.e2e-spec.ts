@@ -1,7 +1,8 @@
-import { NavbarPage } from "e2e/src/page/navbar/navbar.po";
-import { ListarParques } from "e2e/src/page/parque/listar-parques.po";
+import { NavbarPage } from "../../page/navbar/navbar.po";
+
 import { browser } from "protractor";
 import { AppPage } from "../../app.po";
+import { ListarParques } from "../../page/parque/listar-parques.po";
 
 describe("Listar parques", () => {
   let page: AppPage;
