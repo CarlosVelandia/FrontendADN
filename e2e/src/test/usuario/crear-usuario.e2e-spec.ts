@@ -12,7 +12,7 @@ describe("Crear Usuario", () => {
   const NOMBRE = 'test';
   const CEDULA = '123456';
   const USUARIO_CREADO = "El usuario ha sido creado";
-  const USUARIO_YA_EXISTE = "El usuario ya existe en el sistema";
+  const USUARIO_YA_EXISTE = "El usuario ya existe";
 
 
   beforeEach(() => {

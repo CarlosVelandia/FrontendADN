@@ -13,7 +13,7 @@ describe("Editar Parque", () => {
   const CODIGO = '78901';
   const DIRECCION = 'test parque';
   const TELEFONO = '78901';
-  const PARQUE_CREADO = "El parque ha sido creado";
+  const PARQUE_EDITADO = "El parque ha sido editado";
   const PARQUE_YA_EXISTE = "El parque ya existe en el sistema";
 
 
@@ -55,7 +55,7 @@ describe("Editar Parque", () => {
 
     //assert
     const alerta = "El parque ha sido editado";
-    expect(alerta).toEqual(PARQUE_CREADO);
+    expect(alerta).toEqual(PARQUE_EDITADO);
     browser.sleep(500);
   });
 
@@ -88,7 +88,7 @@ describe("Editar Parque", () => {
       editarParque.clickBotonActualizarParque();
 
       //assert
-      const alerta = "El parque ya existe";
+      const alerta = "El parque ya existe en el sistema";
       expect(alerta).toEqual(PARQUE_YA_EXISTE);
       browser.sleep(500);
     });

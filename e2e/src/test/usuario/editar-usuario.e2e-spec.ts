@@ -4,15 +4,15 @@ import { browser } from "protractor";
 import { AppPage } from "../../app.po";
 import { ListarUsuarios } from "../../page/usuario/listar-usuarios.po";
 
-describe("Crear Usuario", () => {
+describe("Editar Usuario", () => {
   let page: AppPage;
   let navBar: NavbarPage;
   let listarUsuarios: ListarUsuarios;
   let editarUsuario: EditarUsuario
   const NOMBRE = 'test usuario';
   const CEDULA = '78901';
-  const USUARIO_CREADO = "El usuario ha sido creado";
-  const USUARIO_YA_EXISTE = "El usuario ya existe en el sistema";
+  const USUARIO_CREADO = "El usuario ha sido editado";
+  const USUARIO_YA_EXISTE = "El usuario ya existe";
 
 
   beforeEach(() => {

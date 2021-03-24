@@ -34,7 +34,6 @@ export class ListarTiqueteComponent implements OnInit {
   }
 
   deleteTiquete(tiquete:Tiquete){
-    alert(tiquete.id);
     this.service.deleteTiquete(tiquete)
     .subscribe(()=>{
       this.tiquetes=this.tiquetes.filter(p=>p!==tiquete);

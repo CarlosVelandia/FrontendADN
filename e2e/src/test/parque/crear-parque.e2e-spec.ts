@@ -79,7 +79,7 @@ describe("Crear Parque", () => {
       crearParque.clickBotonGuardarParque();
 
       //assert
-      const alerta = "El parque ya existe";
+      const alerta = "El parque ya existe en el sistema";
       expect(alerta).toEqual(PARQUE_YA_EXISTE);
       browser.sleep(500);
     });

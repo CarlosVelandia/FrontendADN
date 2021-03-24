@@ -5,7 +5,7 @@
       <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
           <h5>Usuarios</h5>
-          <button (click)="crearUsuario()" class="btn btn-primary btn-sm bi bi-chevron-right" id="botonCrearUsuario">Crear Usuario</button>
+          <button (click)="crearUsuario()" class="btn btn-primary btn-sm bi bi-person-plus-fill" id="botonCrearUsuario"> Crear Usuario</button>
         </div>
       </div>
     </div>
@@ -24,8 +24,9 @@
             <td>{{usuario.nombre}}</td>
             <td>{{usuario.cedula}}</td>
             <td>
-              <button (click)="editarUsuario(usuario)" class="btn btn-warning btn-sm bi bi-star-fill" [id]="'botonEditarUsuario'+ usuario.id">Editar</button>
-              <button (click)="deleteUsuario(usuario)" class="btn btn-danger btn-sm" [id]="'botonEliminarUsuario' + usuario.id" style="margin-left: 10px;">Delete</button>
+              <button (click)="editarUsuario(usuario)" class="btn btn-outline-secondary btn-sm bi bi-pencil-square" [id]="'botonEditarUsuario'+ usuario.id"> Editar</button>
+              &nbsp;
+              <button (click)="deleteUsuario(usuario)" class="btn btn-outline-danger btn-sm bi bi-trash-fill" [id]="'botonEliminarUsuario' + usuario.id"> Borrar</button>
             </td>
           </tr>
         </tbody>
