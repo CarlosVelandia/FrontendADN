@@ -25,17 +25,17 @@ describe("Crear Usuario", () => {
   it("Debe crear el Usuario", () => {
   //arrange
     page.navigateTo();
-    browser.sleep(500);
+    browser.sleep(1000);
     navBar.clickBotonUsuarios();
-    browser.sleep(500);
+    browser.sleep(1000);
     listarUsuarios.clickBotonCrearUsuario();
-    browser.sleep(500);
+    browser.sleep(1000);
     crearUsuario.clickInputNombre();
     crearUsuario.setInputNombre(NOMBRE);
-    browser.sleep(500);
+    browser.sleep(1000);
     crearUsuario.clickInputCedula();
     crearUsuario.setInputCedula(CEDULA);
-    browser.sleep(500);
+    browser.sleep(1000);
 
     //act
     crearUsuario.clickBotonGuardarUsuario();
@@ -43,20 +43,22 @@ describe("Crear Usuario", () => {
     //assert
     const alerta = "El usuario ha sido creado";
     expect(alerta).toEqual(USUARIO_CREADO);
-    browser.sleep(500);
+    browser.sleep(1000);
   });
 
   it("Debe retornar un error que usuario ya existe ", () => {
     //arrange
       page.navigateTo();
+      navBar.clickBotonUsuarios();
+      browser.sleep(1000);
       listarUsuarios.clickBotonCrearUsuario();
-      browser.sleep(500);
+      browser.sleep(1000);
       crearUsuario.clickInputNombre();
       crearUsuario.setInputNombre(NOMBRE);
-      browser.sleep(500);
+      browser.sleep(1000);
       crearUsuario.clickInputCedula();
       crearUsuario.setInputCedula(CEDULA);
-      browser.sleep(500);
+      browser.sleep(1000);
 
       //act
       crearUsuario.clickBotonGuardarUsuario();
@@ -64,7 +66,7 @@ describe("Crear Usuario", () => {
       //assert
       const alerta = "El usuario ya existe";
       expect(alerta).toEqual(USUARIO_YA_EXISTE);
-      browser.sleep(500);
+      browser.sleep(1000);
     });
 
 });

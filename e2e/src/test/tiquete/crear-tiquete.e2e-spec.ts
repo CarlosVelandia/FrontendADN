@@ -26,20 +26,20 @@ describe("Crear Tiquete", () => {
   it("Debe crear el Tiquete", () => {
   //arrange
     page.navigateTo();
-    browser.sleep(500);
+    browser.sleep(1000);
     navBar.clickBotonTiquetes();
-    browser.sleep(500);
+    browser.sleep(1000);
     listarTiquetes.clickBotonCrearTiquete();
-    browser.sleep(500);
+    browser.sleep(1000);
     crearTiquete.clickInputIdUsuario();
     crearTiquete.clickOpcionIdUsuario(ID_USUARiOS);
-    browser.sleep(500);
+    browser.sleep(1000);
     crearTiquete.clickInputinputIdParque();
     crearTiquete.clickOpcionIdParque(ID_PARQUES);
-    browser.sleep(500);
+    browser.sleep(1000);
     crearTiquete.clickInputFechaCompra();
     crearTiquete.setInputFechaCompra(FECHA_COMPRA);
-    browser.sleep(500);
+    browser.sleep(1000);
 
     //act
     crearTiquete.clickBotonGuardarTiquete();
@@ -47,26 +47,26 @@ describe("Crear Tiquete", () => {
     //assert
     const alerta = "El tiquete ha sido creado";
     expect(alerta).toEqual(TIQUETE_CREADO);
-    browser.sleep(500);
+    browser.sleep(1000);
   });
 
   it("Debe retornar un error que tiquete ya existe ", () => {
     //arrange
     page.navigateTo();
-    browser.sleep(500);
+    browser.sleep(1000);
     navBar.clickBotonTiquetes();
-    browser.sleep(500);
+    browser.sleep(1000);
     listarTiquetes.clickBotonCrearTiquete();
-    browser.sleep(500);
+    browser.sleep(1000);
     crearTiquete.clickInputIdUsuario();
     crearTiquete.clickOpcionIdUsuario(ID_USUARiOS);
-    browser.sleep(500);
+    browser.sleep(1000);
     crearTiquete.clickInputinputIdParque();
     crearTiquete.clickOpcionIdParque(ID_PARQUES);
-    browser.sleep(500);
+    browser.sleep(1000);
     crearTiquete.clickInputFechaCompra();
     crearTiquete.setInputFechaCompra(FECHA_COMPRA);
-    browser.sleep(500);
+    browser.sleep(1000);
 
       //act
       crearTiquete.clickBotonGuardarTiquete();
@@ -74,7 +74,7 @@ describe("Crear Tiquete", () => {
       //assert
       const alerta = "El tiquete ya existe";
       expect(alerta).toEqual(TIQUETE_YA_EXISTE);
-      browser.sleep(500);
+      browser.sleep(1000);
     });
 
 });

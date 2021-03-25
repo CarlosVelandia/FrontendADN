@@ -16,12 +16,16 @@ export class CrearUsuarioComponent implements OnInit {
   ngOnInit() {
   }
 
+  // Guardar(){
+  //   this.service.createUsuario(this.usuario)
+  //   .subscribe(()=>{
+  //     alert("El usuario ha sido creado");
+  //     this.router.navigate(["usuarios"]);
+  //   })
+  // }
   Guardar(){
-    this.service.createUsuario(this.usuario)
-    .subscribe(()=>{
-      alert("El usuario ha sido creado");
-      this.router.navigate(["usuarios"]);
-    })
+    this.service.createUsuario(this.usuario).subscribe(()=>{
+    this.router.navigate(["usuarios"]);
+  })
   }
-
 }

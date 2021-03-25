@@ -27,27 +27,27 @@ describe("Editar Parque", () => {
   it("Debe editar el Parque", () => {
   //arrange
     page.navigateTo();
-    browser.sleep(500);
+    browser.sleep(1000);
     navBar.clickBotonParques();
-    browser.sleep(500);
+    browser.sleep(1000);
     listarParques.clickBotonEditarParque();
-    browser.sleep(500);
+    browser.sleep(1000);
     editarParque.clickInputNombre();
     editarParque.limpiarInputNombre();
     editarParque.setInputNombre(NOMBRE);
-    browser.sleep(500);
+    browser.sleep(1000);
     editarParque.clickInputCodigo();
     editarParque.limpiarInputCodigo();
     editarParque.setInputCodigo(CODIGO);
-    browser.sleep(500);
+    browser.sleep(1000);
     editarParque.clickInputDireccion();
     editarParque.limpiarInputDireccion();
     editarParque.setInputDireccion(DIRECCION);
-    browser.sleep(500);
+    browser.sleep(1000);
     editarParque.clickInputTelefono();
     editarParque.limpiarInputTelefono();
     editarParque.setInputTelefono(TELEFONO);
-    browser.sleep(500);
+    browser.sleep(1000);
 
 
     //act
@@ -56,33 +56,33 @@ describe("Editar Parque", () => {
     //assert
     const alerta = "El parque ha sido editado";
     expect(alerta).toEqual(PARQUE_EDITADO);
-    browser.sleep(500);
+    browser.sleep(1000);
   });
 
   it("Debe retornar un error que parque ya existe ", () => {
     //arrange
       page.navigateTo();
-      browser.sleep(500);
+      browser.sleep(1000);
       navBar.clickBotonParques();
-      browser.sleep(500);
+      browser.sleep(1000);
       listarParques.clickBotonEditarParque();
-      browser.sleep(500);
+      browser.sleep(1000);
       editarParque.clickInputNombre();
       editarParque.limpiarInputNombre();
       editarParque.setInputNombre(NOMBRE);
-      browser.sleep(500);
+      browser.sleep(1000);
       editarParque.clickInputCodigo();
       editarParque.limpiarInputCodigo();
       editarParque.setInputCodigo(CODIGO);
-      browser.sleep(500);
+      browser.sleep(1000);
       editarParque.clickInputDireccion();
       editarParque.limpiarInputDireccion();
       editarParque.setInputDireccion(DIRECCION);
-      browser.sleep(500);
+      browser.sleep(1000);
       editarParque.clickInputTelefono();
       editarParque.limpiarInputTelefono();
       editarParque.setInputTelefono(TELEFONO);
-      browser.sleep(500);
+      browser.sleep(1000);
 
       //act
       editarParque.clickBotonActualizarParque();
@@ -90,7 +90,7 @@ describe("Editar Parque", () => {
       //assert
       const alerta = "El parque ya existe en el sistema";
       expect(alerta).toEqual(PARQUE_YA_EXISTE);
-      browser.sleep(500);
+      browser.sleep(1000);
     });
 
 });

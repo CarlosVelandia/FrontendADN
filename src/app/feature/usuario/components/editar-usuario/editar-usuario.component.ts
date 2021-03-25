@@ -21,13 +21,18 @@ export class EditarUsuarioComponent implements OnInit {
 
   }
 
+  // actualizarUsuario(usuario:Usuario){
+  //   this.service.updateUsuario(usuario)
+  //   .subscribe(data=>{
+  //     this.usuario=data;
+  //     alert("Se Actualizo con Exito...!!!");
+  //     this.router.navigate(["usuarios"]);
+  //   })
+  // }
   actualizarUsuario(usuario:Usuario){
-    this.service.updateUsuario(usuario)
-    .subscribe(data=>{
-      this.usuario=data;
-      alert("Se Actualizo con Exito...!!!");
-      this.router.navigate(["usuarios"]);
-    })
+    this.service.updateUsuario(usuario).subscribe(data=>{
+    this.usuario=data;
+    this.router.navigate(["usuarios"]);
+  })
   }
-
 }

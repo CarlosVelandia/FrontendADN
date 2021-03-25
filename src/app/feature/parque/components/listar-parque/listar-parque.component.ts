@@ -29,12 +29,18 @@ export class ListarParqueComponent implements OnInit {
     this.router.navigate(["parques/editar"]);
   }
 
+  // deleteParque(parque:Parque){
+  //   this.service.deleteParque(parque)
+  //   .subscribe(()=>{
+  //     this.parques=this.parques.filter(p=>p!==parque);
+  //     alert("Parque eliminado...");
+  //   })
+  // }
+
   deleteParque(parque:Parque){
-    this.service.deleteParque(parque)
-    .subscribe(()=>{
-      this.parques=this.parques.filter(p=>p!==parque);
-      alert("Parque eliminado...");
-    })
+    this.service.deleteParque(parque).subscribe(()=>{
+    this.parques=this.parques.filter(p=>p!==parque);
+  })
   }
 
 

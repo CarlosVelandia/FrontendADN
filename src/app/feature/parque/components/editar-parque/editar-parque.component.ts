@@ -22,13 +22,19 @@ export class EditarParqueComponent implements OnInit {
 
   }
 
+  // actualizarParque(parque:Parque){
+  //   this.service.updateParque(parque)
+  //   .subscribe(data=>{
+  //     this.parque=data;
+  //     alert("Se Actualizo con Exito...!!!");
+  //     this.router.navigate(["parques"]);
+  //   })
+  // }
   actualizarParque(parque:Parque){
-    this.service.updateParque(parque)
-    .subscribe(data=>{
-      this.parque=data;
-      alert("Se Actualizo con Exito...!!!");
-      this.router.navigate(["parques"]);
-    })
+    this.service.updateParque(parque).subscribe(data=>{
+    this.parque=data;
+    this.router.navigate(["parques"]);
+  })
   }
 
 

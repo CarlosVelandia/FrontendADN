@@ -16,12 +16,17 @@ export class CrearParqueComponent implements OnInit {
 
   ngOnInit() {
   }
+  // guardarParque(){
+  //   this.service.createParque(this.parque)
+  //   .subscribe(()=>{
+  //     alert("Se Creo con Exito...!!!");
+  //     this.router.navigate(["parques"]);
+  //   })
+  // }
   guardarParque(){
-    this.service.createParque(this.parque)
-    .subscribe(()=>{
-      alert("Se Creo con Exito...!!!");
-      this.router.navigate(["parques"]);
-    })
+    this.service.createParque(this.parque).subscribe(()=>{
+    this.router.navigate(["parques"]);
+  })
   }
 
 }

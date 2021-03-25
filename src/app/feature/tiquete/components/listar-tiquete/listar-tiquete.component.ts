@@ -33,12 +33,17 @@ export class ListarTiqueteComponent implements OnInit {
     this.router.navigate(["tiquetes/editar"]);
   }
 
+  // deleteTiquete(tiquete:Tiquete){
+  //   this.service.deleteTiquete(tiquete)
+  //   .subscribe(()=>{
+  //     this.tiquetes=this.tiquetes.filter(p=>p!==tiquete);
+  //     alert("Tiquete eliminado...");
+  //   })
+  // }
   deleteTiquete(tiquete:Tiquete){
-    this.service.deleteTiquete(tiquete)
-    .subscribe(()=>{
-      this.tiquetes=this.tiquetes.filter(p=>p!==tiquete);
-      alert("Tiquete eliminado...");
-    })
+    this.service.deleteTiquete(tiquete).subscribe(()=>{
+    this.tiquetes=this.tiquetes.filter(p=>p!==tiquete);
+   })
   }
 
 }

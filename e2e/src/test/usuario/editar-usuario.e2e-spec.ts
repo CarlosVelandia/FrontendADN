@@ -25,19 +25,19 @@ describe("Editar Usuario", () => {
   it("Debe editar el Usuario", () => {
   //arrange
     page.navigateTo();
-    browser.sleep(500);
+    browser.sleep(1000);
     navBar.clickBotonUsuarios();
-    browser.sleep(500);
+    browser.sleep(1000);
     listarUsuarios.clickBotonEditarUsuario();
-    browser.sleep(500);
+    browser.sleep(1000);
     editarUsuario.clickInputNombre();
     editarUsuario.limpiarInputNombre();
     editarUsuario.setInputNombre(NOMBRE);
-    browser.sleep(500);
+    browser.sleep(1000);
     editarUsuario.clickInputCedula();
     editarUsuario.limpiarInputCedula();
     editarUsuario.setInputCedula(CEDULA);
-    browser.sleep(500);
+    browser.sleep(1000);
 
     //act
     editarUsuario.clickBotonActualizarUsuario();
@@ -51,16 +51,18 @@ describe("Editar Usuario", () => {
   it("Debe retornar un error que usuario ya existe ", () => {
     //arrange
       page.navigateTo();
+      navBar.clickBotonUsuarios();
+      browser.sleep(1000);
       listarUsuarios.clickBotonEditarUsuario();
-      browser.sleep(500);
+      browser.sleep(1000);
       editarUsuario.clickInputNombre();
       editarUsuario.limpiarInputNombre();
       editarUsuario.setInputNombre(NOMBRE);
-      browser.sleep(500);
+      browser.sleep(1000);
       editarUsuario.clickInputCedula();
       editarUsuario.limpiarInputCedula();
       editarUsuario.setInputCedula(CEDULA);
-      browser.sleep(500);
+      browser.sleep(1000);
 
       //act
       editarUsuario.clickBotonActualizarUsuario();

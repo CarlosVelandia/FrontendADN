@@ -21,14 +21,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let tiquete of tiquetes" class="text-center">
+          <tr *ngFor="let tiquete of tiquetes" class="text-center tablaTiquetes">
             <td>{{tiquete.id}}</td>
             <td>{{tiquete.idUsuario.nombre}}</td>
             <td>{{tiquete.idParque.nombre}}</td>
             <td>{{tiquete.fechaCompra}}</td>
             <td>{{tiquete.valor}}</td>
             <td>
-              <button (click)="deleteTiquete(tiquete)" class="btn btn-outline-danger btn-sm bi bi-trash-fill" id="botonEliminarTiquete" style="margin-left: 10px;"> Borrar</button>
+              <button (click)="deleteTiquete(tiquete)" class="btn btn-outline-danger btn-sm bi bi-trash-fill" [id]="'botonEliminarTiquete' + tiquete.id" style="margin-left: 10px;"> Borrar</button>
             </td>
           </tr>
         </tbody>

@@ -22,7 +22,7 @@ describe("Listar usuarios", () => {
     navBar.clickBotonUsuarios();
     browser.sleep(500);
     //assert
-    expect(2).toBe(listarUsuarios.contarUsuarios());
+    expect(3).toBe(listarUsuarios.contarUsuarios());
     browser.sleep(500);
   });
 });

@@ -28,11 +28,16 @@ export class ListarUsuarioComponent implements OnInit {
     this.router.navigate(["usuarios/editar"]);
   }
 
+  // deleteUsuario(usuario:Usuario){
+  //   this.service.deleteUsuario(usuario)
+  //   .subscribe(()=>{
+  //     this.usuarios=this.usuarios.filter(p=>p!==usuario);
+  //     alert("Usuario eliminado...");
+  //   })
+  // }
   deleteUsuario(usuario:Usuario){
-    this.service.deleteUsuario(usuario)
-    .subscribe(()=>{
-      this.usuarios=this.usuarios.filter(p=>p!==usuario);
-      alert("Usuario eliminado...");
+    this.service.deleteUsuario(usuario).subscribe(()=>{
+    this.usuarios=this.usuarios.filter(p=>p!==usuario);
     })
   }
 

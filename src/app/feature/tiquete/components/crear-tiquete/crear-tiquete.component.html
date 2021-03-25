@@ -6,7 +6,7 @@
     <div class="card-body">
       <form action="">
         <div class="form-group">
-          <label for="">ID Usuario:</label>
+          <label for="idUsuarios">ID Usuario:</label>
           <!-- <input [(ngModel)]="tiquete.idUsuario" name="idUsuario" type="text" class="form-control"> -->
           <select [(ngModel)]="tiquete.idUsuario" [ngModelOptions]="{standalone: true}" class="form-control" required id="idUsuarios">
             <option value="" selected  disabled>Seleccionar</option>
@@ -14,7 +14,7 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="">ID Parque:</label>
+          <label for="idParques">ID Parque:</label>
             <!-- <input [(ngModel)]="tiquete.idParque" name="idParque" type="text" class="form-control"> -->
           <select [(ngModel)]="tiquete.idParque" [ngModelOptions]="{standalone: true}" class="form-control" required id="idParques" >
             <option value="" selected  disabled>Seleccionar</option>
