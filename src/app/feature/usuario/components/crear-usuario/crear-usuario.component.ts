@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SwalService } from '@core/services/swal.service';
 import { Usuario } from 'src/app/feature/usuario/shared/model/Usuario';
 import { UsuarioService } from '../../shared/service/usuario.service';
 
@@ -11,7 +12,11 @@ import { UsuarioService } from '../../shared/service/usuario.service';
 export class CrearUsuarioComponent implements OnInit {
 
   usuario:Usuario=new Usuario();
-  constructor(private router:Router, private service:UsuarioService) { }
+  constructor(
+    private router:Router,
+    private service:UsuarioService,
+    protected swalService: SwalService,
+    ) { }
 
   ngOnInit() {
   }
@@ -25,7 +30,9 @@ export class CrearUsuarioComponent implements OnInit {
   // }
   Guardar(){
     this.service.createUsuario(this.usuario).subscribe(()=>{
+    this.swalService.succes("Usuario creado correctamente");
     this.router.navigate(["usuarios"]);
+
   })
   }
 }

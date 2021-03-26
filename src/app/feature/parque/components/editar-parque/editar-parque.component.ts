@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SwalService } from '@core/services/swal.service';
 import { Parque } from '../../shared/model/Parque';
 import { ParqueService } from '../../shared/service/parque.service';
 
@@ -13,7 +14,11 @@ export class EditarParqueComponent implements OnInit {
 
   parque:Parque;
 
-  constructor(private router:Router,private service:ParqueService) {
+  constructor(
+    private router:Router,
+    private service:ParqueService,
+    protected swalService: SwalService
+    ) {
 
     this.parque=this.service.parque;
   }
@@ -22,17 +27,10 @@ export class EditarParqueComponent implements OnInit {
 
   }
 
-  // actualizarParque(parque:Parque){
-  //   this.service.updateParque(parque)
-  //   .subscribe(data=>{
-  //     this.parque=data;
-  //     alert("Se Actualizo con Exito...!!!");
-  //     this.router.navigate(["parques"]);
-  //   })
-  // }
   actualizarParque(parque:Parque){
     this.service.updateParque(parque).subscribe(data=>{
     this.parque=data;
+    this.swalService.succes("Parque actualizado correctamente");
     this.router.navigate(["parques"]);
   })
   }

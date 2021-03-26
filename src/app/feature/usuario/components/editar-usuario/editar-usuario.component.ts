@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SwalService } from '@core/services/swal.service';
 
 import { Usuario } from 'src/app/feature/usuario/shared/model/Usuario';
 import { UsuarioService } from '../../shared/service/usuario.service';
@@ -12,7 +13,11 @@ import { UsuarioService } from '../../shared/service/usuario.service';
 export class EditarUsuarioComponent implements OnInit {
 
   usuario :Usuario=new Usuario();
-  constructor(private router:Router,private service:UsuarioService) {
+  constructor(
+    private router:Router,
+    private service:UsuarioService,
+    protected swalService: SwalService,
+    ) {
 
     this.usuario=this.service.usuario;
    }
@@ -21,17 +26,10 @@ export class EditarUsuarioComponent implements OnInit {
 
   }
 
-  // actualizarUsuario(usuario:Usuario){
-  //   this.service.updateUsuario(usuario)
-  //   .subscribe(data=>{
-  //     this.usuario=data;
-  //     alert("Se Actualizo con Exito...!!!");
-  //     this.router.navigate(["usuarios"]);
-  //   })
-  // }
   actualizarUsuario(usuario:Usuario){
     this.service.updateUsuario(usuario).subscribe(data=>{
     this.usuario=data;
+    this.swalService.succes("Usuario actualizado correctamente");
     this.router.navigate(["usuarios"]);
   })
   }

@@ -9,11 +9,10 @@ describe("Crear Tiquete", () => {
   let navBar: NavbarPage;
   let listarTiquetes: ListarTiquetes;
   let crearTiquete: CrearTiquete;
-  const ID_USUARiOS="idUsuarios";
-  const ID_PARQUES="idParques";
-  const FECHA_COMPRA = '2021-03-18';
+  const FECHA_COMPRA = '25-03-2021';
   const TIQUETE_CREADO = "El tiquete ha sido creado";
-  const TIQUETE_YA_EXISTE = "El tiquete ya existe";
+  const FECHA_COMPRA_LUNES= '29-03-2021';
+  const DIA_LUNES="Los lunes no se venden tiquetes";
 
 
   beforeEach(() => {
@@ -32,10 +31,10 @@ describe("Crear Tiquete", () => {
     listarTiquetes.clickBotonCrearTiquete();
     browser.sleep(1000);
     crearTiquete.clickInputIdUsuario();
-    crearTiquete.clickOpcionIdUsuario(ID_USUARiOS);
+    crearTiquete.clickOpcionIdUsuario();
     browser.sleep(1000);
     crearTiquete.clickInputinputIdParque();
-    crearTiquete.clickOpcionIdParque(ID_PARQUES);
+    crearTiquete.clickOpcionIdParque();
     browser.sleep(1000);
     crearTiquete.clickInputFechaCompra();
     crearTiquete.setInputFechaCompra(FECHA_COMPRA);
@@ -50,7 +49,7 @@ describe("Crear Tiquete", () => {
     browser.sleep(1000);
   });
 
-  it("Debe retornar un error que tiquete ya existe ", () => {
+  it("Debe retornar un error el dia lunes", () => {
     //arrange
     page.navigateTo();
     browser.sleep(1000);
@@ -59,21 +58,21 @@ describe("Crear Tiquete", () => {
     listarTiquetes.clickBotonCrearTiquete();
     browser.sleep(1000);
     crearTiquete.clickInputIdUsuario();
-    crearTiquete.clickOpcionIdUsuario(ID_USUARiOS);
+    crearTiquete.clickOpcionIdUsuario();
     browser.sleep(1000);
     crearTiquete.clickInputinputIdParque();
-    crearTiquete.clickOpcionIdParque(ID_PARQUES);
+    crearTiquete.clickOpcionIdParque();
     browser.sleep(1000);
     crearTiquete.clickInputFechaCompra();
-    crearTiquete.setInputFechaCompra(FECHA_COMPRA);
+    crearTiquete.setInputFechaCompra(FECHA_COMPRA_LUNES);
     browser.sleep(1000);
 
       //act
       crearTiquete.clickBotonGuardarTiquete();
 
       //assert
-      const alerta = "El tiquete ya existe";
-      expect(alerta).toEqual(TIQUETE_YA_EXISTE);
+      const alerta = "Los lunes no se venden tiquetes";
+      expect(alerta).toEqual(DIA_LUNES);
       browser.sleep(1000);
     });
 

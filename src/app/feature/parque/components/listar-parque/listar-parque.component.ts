@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SwalService } from '@core/services/swal.service';
 import { Parque } from '../../shared/model/Parque';
 import { ParqueService } from '../../shared/service/parque.service';
 
@@ -11,7 +12,7 @@ import { ParqueService } from '../../shared/service/parque.service';
 export class ListarParqueComponent implements OnInit {
 
   parques:Parque[];
-  constructor(private service: ParqueService, private router: Router) { }
+  constructor(private service: ParqueService, private router: Router,protected swalService: SwalService) { }
 
   ngOnInit() {
     this.service.getParques()
@@ -29,16 +30,9 @@ export class ListarParqueComponent implements OnInit {
     this.router.navigate(["parques/editar"]);
   }
 
-  // deleteParque(parque:Parque){
-  //   this.service.deleteParque(parque)
-  //   .subscribe(()=>{
-  //     this.parques=this.parques.filter(p=>p!==parque);
-  //     alert("Parque eliminado...");
-  //   })
-  // }
-
   deleteParque(parque:Parque){
     this.service.deleteParque(parque).subscribe(()=>{
+    this.swalService.confirm("Parque editado correctamente");
     this.parques=this.parques.filter(p=>p!==parque);
   })
   }

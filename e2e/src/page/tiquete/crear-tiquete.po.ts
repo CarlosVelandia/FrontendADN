@@ -5,6 +5,8 @@ export class CrearTiquete {
   private inputIdParque = element(by.id("idParque"));
   private inputFechaCompra = element(by.id("fechaCompra"));
   private botonCreaTiquete = element(by.id("guardarTiquete"));
+  private seleccionUsuario = element.all(by.id("usuarios"));
+  private seleccionParque = element.all(by.id("parques"));
 
   async clickInputIdUsuario() {
     await this.inputIdUsuario.click();
@@ -17,34 +19,25 @@ export class CrearTiquete {
     await this.inputFechaCompra.click();
   }
 
-  // async setInputIdUsuario(idUsuario: number) {
-  //   await this.inputIdUsuario.sendKeys(idUsuario);
-  // }
-
-  // async setInputIdParque(idParque: number) {
-  //   await this.inputIdParque.sendKeys(idParque);
-  // }
-
   async setInputFechaCompra(fechaCompra: string) {
     await this.inputFechaCompra.sendKeys(fechaCompra);
   }
 
-  async clickOpcionIdUsuario(idUsuarios: string) {
-    await this.getOpcionIdUsuario(idUsuarios).click();
+  async clickOpcionIdUsuario() {
+    await this.getOpcionIdUsuario().click();
   }
 
-  async clickOpcionIdParque(idParques: string) {
-    await this.getOpcionIdParque(idParques).click();
+  async clickOpcionIdParque() {
+    await this.getOpcionIdParque().click();
   }
 
-  getOpcionIdUsuario(idUsuarios: string) {
-    return element.all(by.id(idUsuarios)).first();
+  getOpcionIdUsuario() {
+    return this.seleccionUsuario.first();
   }
 
-  getOpcionIdParque(idParques: string) {
-    return element.all(by.id(idParques)).first();
+  getOpcionIdParque() {
+    return this.seleccionParque.first();
   }
-
 
   async clickBotonGuardarTiquete() {
     await this.botonCreaTiquete.click();

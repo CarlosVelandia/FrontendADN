@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SwalService } from '@core/services/swal.service';
 import { Parque } from '@parque/shared/model/Parque';
 import { ParqueService } from '@parque/shared/service/parque.service';
 import { Tiquete } from 'src/app/feature/tiquete/shared/model/Tiquete';
@@ -24,7 +25,8 @@ export class CrearTiqueteComponent implements OnInit {
     private router:Router,
     private service:TiqueteService,
     private serviceParque:ParqueService,
-    private serviceUsuario:UsuarioService
+    private serviceUsuario:UsuarioService,
+    protected swalService: SwalService,
     ) { }
 
   ngOnInit() {
@@ -47,6 +49,7 @@ export class CrearTiqueteComponent implements OnInit {
   // }
   guardarTiquete(){
     this.service.createTiquete(this.tiquete).subscribe(()=>{
+    this.swalService.succes("Tiquete creado correctamente");
     this.router.navigate(["tiquetes"]);
   })
   }

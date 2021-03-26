@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SwalService } from '@core/services/swal.service';
 import { Parque } from '../../shared/model/Parque';
 import { ParqueService } from '../../shared/service/parque.service';
 
@@ -12,20 +13,19 @@ import { ParqueService } from '../../shared/service/parque.service';
 export class CrearParqueComponent implements OnInit {
 
   parque:Parque=new Parque();
-  constructor(private router:Router, private service:ParqueService) { }
+  constructor(
+    private router:Router,
+    private service:ParqueService,
+    protected swalService: SwalService
+    ) { }
 
   ngOnInit() {
   }
-  // guardarParque(){
-  //   this.service.createParque(this.parque)
-  //   .subscribe(()=>{
-  //     alert("Se Creo con Exito...!!!");
-  //     this.router.navigate(["parques"]);
-  //   })
-  // }
+
   guardarParque(){
     this.service.createParque(this.parque).subscribe(()=>{
-    this.router.navigate(["parques"]);
+      this.swalService.succes("Parque creado correctamente");
+      this.router.navigate(["parques"]);
   })
   }
 
