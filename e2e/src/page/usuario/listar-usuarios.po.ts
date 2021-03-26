@@ -22,4 +22,5 @@ export class ListarUsuarios{
   async clickBotonEliminarUsuario() {
     await this.botonEliminarUsuario.click();
   }
+
 }

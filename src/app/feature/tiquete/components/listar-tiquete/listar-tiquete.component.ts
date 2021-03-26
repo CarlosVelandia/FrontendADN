@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SwalService } from '@core/services/swal.service';
 import { Tiquete } from 'src/app/feature/tiquete/shared/model/Tiquete';
 import { TiqueteService } from '../../shared/service/tiquete.service';
 
@@ -14,7 +15,7 @@ import { TiqueteService } from '../../shared/service/tiquete.service';
 export class ListarTiqueteComponent implements OnInit {
 
   tiquetes:Tiquete[];
-  constructor(private service: TiqueteService, private router: Router) { }
+  constructor(private service: TiqueteService, private router: Router, protected swalService: SwalService) { }
 
   ngOnInit() {
     this.service.getTiquetes()
@@ -28,20 +29,13 @@ export class ListarTiqueteComponent implements OnInit {
   }
 
   editarTiquete(tiquete:Tiquete){
-    //localStorage.setItem("id",tiquete.id.toString());
     this.service.tiquete = tiquete;
     this.router.navigate(["tiquetes/editar"]);
   }
 
-  // deleteTiquete(tiquete:Tiquete){
-  //   this.service.deleteTiquete(tiquete)
-  //   .subscribe(()=>{
-  //     this.tiquetes=this.tiquetes.filter(p=>p!==tiquete);
-  //     alert("Tiquete eliminado...");
-  //   })
-  // }
   deleteTiquete(tiquete:Tiquete){
     this.service.deleteTiquete(tiquete).subscribe(()=>{
+    this.swalService.danger("Se ha eliminado el Tiquete");
     this.tiquetes=this.tiquetes.filter(p=>p!==tiquete);
    })
   }

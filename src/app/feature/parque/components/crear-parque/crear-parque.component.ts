@@ -26,6 +26,9 @@ export class CrearParqueComponent implements OnInit {
     this.service.createParque(this.parque).subscribe(()=>{
       this.swalService.succes("Parque creado correctamente");
       this.router.navigate(["parques"]);
+  },
+  (error) => {
+    this.swalService.danger(error.error.mensaje);
   })
   }
 

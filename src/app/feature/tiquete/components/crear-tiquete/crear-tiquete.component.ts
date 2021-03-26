@@ -40,18 +40,17 @@ export class CrearTiqueteComponent implements OnInit {
         this.usuarios = data;
       });
   }
-  // guardarTiquete(){
-  //   this.service.createTiquete(this.tiquete)
-  //   .subscribe(()=>{
-  //     alert("Se Creo con Exito...!!!");
-  //     this.router.navigate(["tiquetes"]);
-  //   })
-  // }
+
   guardarTiquete(){
-    this.service.createTiquete(this.tiquete).subscribe(()=>{
-    this.swalService.succes("Tiquete creado correctamente");
-    this.router.navigate(["tiquetes"]);
-  })
-  }
+    this.service.createTiquete(this.tiquete).subscribe(
+      () => {
+        this.swalService.succes("Tiquete creado correctamente");
+        this.router.navigate(["tiquetes"]);
+      },
+      (error) => {
+        this.swalService.danger(error.error.mensaje);
+      }
+    );
+   }
 
 }

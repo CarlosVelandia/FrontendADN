@@ -31,9 +31,32 @@ export class ListarUsuarioComponent implements OnInit {
 
   deleteUsuario(usuario:Usuario){
     this.service.deleteUsuario(usuario).subscribe(()=>{
-    //this.swalService.confirm("¿Seguro desea eliminar el usuario?");
+    this.swalService.danger("Se ha eliminado el Usuario");
     this.usuarios=this.usuarios.filter(p=>p!==usuario);
     })
   }
+
+ // deleteUsuario(usuario: Usuario) {
+    //   this.swalService.confirm(
+    //     "¿Esta seguro?",
+    //     "Esta a punto de eliminar el usuario",
+    //     "warning",
+    //     "Si",
+    //     "No",
+    //     {
+    //       clickConfirm: () => {
+    //         this.service.deleteUsuario(usuario).subscribe(
+    //           () => {
+    //             this.swalService.succes("Listolis");
+    //             this.usuarios = this.usuarios.filter((p) => p !== usuario);
+    //           },
+    //           (error) => {
+    //             this.swalService.danger(error.error.mensaje);
+    //           }
+    //         );
+    //       },
+    //     }
+    //   );
+    // }
 
 }

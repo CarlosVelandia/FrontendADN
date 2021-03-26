@@ -32,7 +32,7 @@ export class ListarParqueComponent implements OnInit {
 
   deleteParque(parque:Parque){
     this.service.deleteParque(parque).subscribe(()=>{
-    this.swalService.confirm("Parque editado correctamente");
+    this.swalService.danger("Parque eliminado correctamente");
     this.parques=this.parques.filter(p=>p!==parque);
   })
   }
