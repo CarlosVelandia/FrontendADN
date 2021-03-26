@@ -12,7 +12,9 @@ describe("Editar Usuario", () => {
   const NOMBRE = 'test usuario';
   const CEDULA = '78901';
   const USUARIO_CREADO = "El usuario ha sido editado";
-  const USUARIO_YA_EXISTE = "El usuario ya existe";
+  const USUARIO_YA_EXISTE = "La cedula ya existe";
+  const CEDULA_REPETIDA = '7785699';
+  const NOMBRE_ACTUALIZAR = 'Usuario dos';
 
 
   beforeEach(() => {
@@ -48,7 +50,7 @@ describe("Editar Usuario", () => {
     browser.sleep(300);
   });
 
-  it("Debe retornar un error que usuario ya existe ", () => {
+  it("Debe retornar un error que la cedula ya existe ", () => {
     //arrange
       page.navigateTo();
       navBar.clickBotonUsuarios();
@@ -57,18 +59,18 @@ describe("Editar Usuario", () => {
       browser.sleep(1000);
       editarUsuario.clickInputNombre();
       editarUsuario.limpiarInputNombre();
-      editarUsuario.setInputNombre(NOMBRE);
+      editarUsuario.setInputNombre(NOMBRE_ACTUALIZAR);
       browser.sleep(1000);
       editarUsuario.clickInputCedula();
       editarUsuario.limpiarInputCedula();
-      editarUsuario.setInputCedula(CEDULA);
+      editarUsuario.setInputCedula(CEDULA_REPETIDA);
       browser.sleep(1000);
 
       //act
       editarUsuario.clickBotonActualizarUsuario();
 
       //assert
-      const alerta = "El usuario ya existe";
+      const alerta = "La cedula ya existe";
       expect(alerta).toEqual(USUARIO_YA_EXISTE);
       browser.sleep(300);
     });

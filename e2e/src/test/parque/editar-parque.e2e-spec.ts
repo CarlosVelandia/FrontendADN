@@ -11,10 +11,14 @@ describe("Editar Parque", () => {
   let editarParque: EditarParque;
   const NOMBRE = "test parque";
   const CODIGO = "78901";
-  const DIRECCION = "test parque";
-  const TELEFONO = "78901";
+  const DIRECCION = "Calle 95 # 45b - 32";
+  const TELEFONO = "2365544";
   const PARQUE_EDITADO = "El parque ha sido editado";
   const PARQUE_YA_EXISTE = "El parque ya existe en el sistema";
+  const NOMBRE_ACTUALIZAR = "Segundo Parque";
+  const CODIGO_ACTUALIZAR = "2456";
+  const DIRECCION_ACTUALIZAR = "Carrera 12A # 22 - 14";
+  const TELEFONO_ACTUALIZAR = "2278956";
 
   beforeEach(() => {
     page = new AppPage();
@@ -67,19 +71,19 @@ describe("Editar Parque", () => {
     browser.sleep(1000);
     editarParque.clickInputNombre();
     editarParque.limpiarInputNombre();
-    editarParque.setInputNombre(NOMBRE);
+    editarParque.setInputNombre(NOMBRE_ACTUALIZAR);
     browser.sleep(1000);
     editarParque.clickInputCodigo();
     editarParque.limpiarInputCodigo();
-    editarParque.setInputCodigo(CODIGO);
+    editarParque.setInputCodigo(CODIGO_ACTUALIZAR);
     browser.sleep(1000);
     editarParque.clickInputDireccion();
     editarParque.limpiarInputDireccion();
-    editarParque.setInputDireccion(DIRECCION);
+    editarParque.setInputDireccion(DIRECCION_ACTUALIZAR);
     browser.sleep(1000);
     editarParque.clickInputTelefono();
     editarParque.limpiarInputTelefono();
-    editarParque.setInputTelefono(TELEFONO);
+    editarParque.setInputTelefono(TELEFONO_ACTUALIZAR);
     browser.sleep(1000);
 
     //act

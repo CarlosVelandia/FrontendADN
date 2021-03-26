@@ -21,7 +21,7 @@ describe("Listar tiquetes", () => {
     navBar.clickBotonTiquetes();
     browser.sleep(300);
     //assert
-    expect(1).toBe(listarParques.contarParques());
+    expect(0).toBe(listarParques.contarParques());
     browser.sleep(500);
   });
 });
