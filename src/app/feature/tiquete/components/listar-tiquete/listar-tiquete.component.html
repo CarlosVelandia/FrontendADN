@@ -25,7 +25,7 @@
             <td>{{tiquete.id}}</td>
             <td>{{tiquete.idUsuario.nombre}}</td>
             <td>{{tiquete.idParque.nombre}}</td>
-            <td>{{tiquete.fechaCompra}}</td>
+            <td>{{tiquete.fechaCompra | date:'dd-MM-yyyy'}}</td>
             <td>{{tiquete.valor}}</td>
             <td>
               <button (click)="deleteTiquete(tiquete)" class="btn btn-outline-danger btn-sm bi bi-trash-fill" [id]="'botonEliminarTiquete' + tiquete.id" style="margin-left: 10px;"> Borrar</button>

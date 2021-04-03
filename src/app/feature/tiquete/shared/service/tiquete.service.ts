@@ -1,28 +1,26 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Tiquete } from '../model/Tiquete';
+import { HttpService } from '@core/services/http.service';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable()
 export class TiqueteService {
 
   tiquete: Tiquete;
+  endpointTiquetes: "/tiquetes";
 
-  constructor(private http:HttpClient) { }
-
-  Url='http://localhost:8084/tiquetes-parque-diversiones';
-
+  constructor(protected http:HttpService) { }
 
   getTiquetes(){
-    return this.http.get<Tiquete[]>(this.Url+"/tiquetes");
+    return this.http.doGet<Tiquete[]>(`${environment.endpoint}/tiquetes`);
   }
+
   createTiquete(tiquete:Tiquete){
-    return this.http.post<Tiquete>(this.Url+"/tiquetes",tiquete);
+    return this.http.doPost<Tiquete, boolean>(`${environment.endpoint}/tiquetes`,tiquete);
   }
-  updateTiquete(tiquete:Tiquete){
-    return this.http.put<Tiquete>(this.Url+"/tiquetes/"+tiquete.id,tiquete);
-  }
+
   deleteTiquete(tiquete:Tiquete){
-    return this.http.delete<Tiquete>(this.Url+"/tiquetes/"+tiquete.id);
+    return this.http.doDelete<Tiquete>(`${environment.endpoint}/tiquetes/${tiquete.id}`);
   }
 }

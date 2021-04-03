@@ -23,7 +23,7 @@
         </div>
         <div class="form-group">
           <label for="">Fecha de compra:</label>
-          <input [(ngModel)]="tiquete.fechaCompra" name="fechaCompra" type="text" class="form-control" id="fechaCompra">
+          <input [(ngModel)]="tiquete.fechaCompra" name="fechaCompra" type="date" min="2021-04-02" class="form-control" id="fechaCompra" required>
         </div>
         <button (click)="guardarTiquete()" class="bi bi-check2-square btn btn-sm btn-danger" id="guardarTiquete"> Crear</button>
       </form>

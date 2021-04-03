@@ -1,28 +1,28 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Parque } from '../model/Parque';
+import { HttpService } from '@core/services/http.service';
+import { environment } from 'src/environments/environment';
+
 
 
 @Injectable()
 export class ParqueService {
 
   parque: Parque;
+  endpointParques: "/parques";
 
-  constructor(private http:HttpClient) { }
-
-  Url='http://localhost:8084/tiquetes-parque-diversiones';
-
+  constructor(protected http:HttpService) { }
 
   getParques(){
-    return this.http.get<Parque[]>(this.Url+"/parques");
+    return this.http.doGet<Parque[]>(`${environment.endpoint}/parques`);
   }
   createParque(parque:Parque){
-    return this.http.post<Parque>(this.Url+"/parques",parque);
+    return this.http.doPost<Parque, boolean>(`${environment.endpoint}/parques`,parque);
   }
   updateParque(parque:Parque){
-    return this.http.put<Parque>(this.Url+"/parques/"+parque.id,parque);
+    return this.http.doPut<Parque, boolean>(`${environment.endpoint}/parques/${parque.id}`,parque);
   }
   deleteParque(parque:Parque){
-    return this.http.delete<Parque>(this.Url+"/parques/"+parque.id);
+    return this.http.doDelete<Parque>(`${environment.endpoint}/parques/${parque.id}`);
   }
 }

@@ -24,8 +24,7 @@ export class EditarParqueComponent implements OnInit {
 
   actualizarParque(parque: Parque) {
     this.service.updateParque(parque).subscribe(
-      (data) => {
-        this.parque = data;
+      () => {
         this.swalService.succes("Parque actualizado correctamente");
         this.router.navigate(["parques"]);
       },

@@ -6,7 +6,6 @@ import { ParqueService } from '@parque/shared/service/parque.service';
 import { Tiquete } from 'src/app/feature/tiquete/shared/model/Tiquete';
 import { Usuario } from 'src/app/feature/usuario/shared/model/Usuario';
 import { UsuarioService } from 'src/app/feature/usuario/shared/service/usuario.service';
-
 import { TiqueteService } from '../../shared/service/tiquete.service';
 
 @Component({

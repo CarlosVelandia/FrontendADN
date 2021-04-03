@@ -24,8 +24,7 @@ export class EditarUsuarioComponent implements OnInit {
 
   actualizarUsuario(usuario: Usuario) {
     this.service.updateUsuario(usuario).subscribe(
-      (data) => {
-        this.usuario = data;
+      () => {
         this.swalService.succes("Usuario actualizado correctamente");
         this.router.navigate(["usuarios"]);
       },
