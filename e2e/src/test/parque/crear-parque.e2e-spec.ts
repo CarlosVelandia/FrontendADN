@@ -13,8 +13,8 @@ describe("Crear Parque", () => {
   const CODIGO = "987654";
   const DIRECCION = "Calle 1 # 2-3";
   const TELEFONO = "456789";
-  const PARQUE_CREADO = "El parque ha sido creado";
-  const PARQUE_YA_EXISTE = "El parque ya existe en el sistema";
+  const PARQUE_CREADO = "";
+  const PARQUE_YA_EXISTE = "";
 
   beforeEach(() => {
     page = new AppPage();
@@ -48,7 +48,9 @@ describe("Crear Parque", () => {
     crearParque.clickBotonGuardarParque();
 
     //assert
-    const alerta = "El parque ha sido creado";
+    //const alerta = "El parque ha sido creado";
+    const alerta = crearParque.getTextoSwal();
+
     expect(alerta).toEqual(PARQUE_CREADO);
     browser.sleep(1000);
   });
@@ -78,7 +80,9 @@ describe("Crear Parque", () => {
     crearParque.clickBotonGuardarParque();
 
     //assert
-    const alerta = "El parque ya existe en el sistema";
+    //const alerta = "El parque ya existe en el sistema";
+    const alerta = crearParque.getTextoSwal();
+
     expect(alerta).toEqual(PARQUE_YA_EXISTE);
     browser.sleep(1000);
   });

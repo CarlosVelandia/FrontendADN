@@ -6,6 +6,8 @@ export class ListarTiquetes{
   private botonCrearTiquete = element.all(by.id("botonCrearTiquete"));
   private botonEditarTiquete = element.all(by.id("botonEditarTiquete3"));
   private botonEliminarTiquete = element.all(by.id("botonEliminarTiquete3"));
+  private swal = element(by.className('swal2-html-container'));
+
 
   async contarTiquetes() {
     return this.tablaTiquetes.count();
@@ -21,5 +23,9 @@ export class ListarTiquetes{
 
   async clickBotonEliminarTiquete() {
     await this.botonEliminarTiquete.click();
+  }
+
+  async getTextoSwal(): Promise<string> {
+    return await this.swal.getText();
   }
 }

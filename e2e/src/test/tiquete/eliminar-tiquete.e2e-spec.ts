@@ -7,7 +7,7 @@ describe("Eliminar Tiquete", () => {
   let page: AppPage;
   let navBar: NavbarPage;
   let listarTiquetes: ListarTiquetes;
-  const TIQUETE_ELIMINADO = "El tiquete ha sido eliminado";
+  const TIQUETE_ELIMINADO = "";
 
   beforeEach(() => {
     page = new AppPage();
@@ -27,7 +27,8 @@ describe("Eliminar Tiquete", () => {
     browser.sleep(500);
 
     //assert
-    const alerta = "El tiquete ha sido eliminado";
+    //const alerta = "El tiquete ha sido eliminado";
+    const alerta = listarTiquetes.getTextoSwal();
     expect(alerta).toEqual(TIQUETE_ELIMINADO);
     browser.sleep(500);
   });

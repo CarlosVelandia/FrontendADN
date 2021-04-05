@@ -9,10 +9,10 @@ describe("Crear Tiquete", () => {
   let navBar: NavbarPage;
   let listarTiquetes: ListarTiquetes;
   let crearTiquete: CrearTiquete;
-  const FECHA_COMPRA = '25-03-2021';
-  const TIQUETE_CREADO = "El tiquete ha sido creado";
-  const FECHA_COMPRA_LUNES= '29-03-2021';
-  const DIA_LUNES="Los lunes no se venden tiquetes";
+  const FECHA_COMPRA = "03-25-2021";
+  const TIQUETE_CREADO = "";
+  const FECHA_COMPRA_LUNES= "03-29-2021";
+  const DIA_LUNES="";
 
 
   beforeEach(() => {
@@ -44,7 +44,9 @@ describe("Crear Tiquete", () => {
     crearTiquete.clickBotonGuardarTiquete();
 
     //assert
-    const alerta = "El tiquete ha sido creado";
+    //const alerta = "Tiquete creado correctamente";
+    const alerta = crearTiquete.getTextoSwal();
+
     expect(alerta).toEqual(TIQUETE_CREADO);
     browser.sleep(1000);
   });
@@ -71,7 +73,8 @@ describe("Crear Tiquete", () => {
       crearTiquete.clickBotonGuardarTiquete();
 
       //assert
-      const alerta = "Los lunes no se venden tiquetes";
+      //const alerta = "Los lunes no se venden tiquetes";
+      const alerta = crearTiquete.getTextoSwal();
       expect(alerta).toEqual(DIA_LUNES);
       browser.sleep(1000);
     });

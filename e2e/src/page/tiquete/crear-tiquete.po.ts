@@ -7,6 +7,8 @@ export class CrearTiquete {
   private botonCreaTiquete = element(by.id("guardarTiquete"));
   private seleccionUsuario = element.all(by.id("usuarios"));
   private seleccionParque = element.all(by.id("parques"));
+  private swal = element(by.className('swal2-html-container'));
+
 
   async clickInputIdUsuario() {
     await this.inputIdUsuario.click();
@@ -41,6 +43,10 @@ export class CrearTiquete {
 
   async clickBotonGuardarTiquete() {
     await this.botonCreaTiquete.click();
+  }
+
+  async getTextoSwal(): Promise<string> {
+    return await this.swal.getText();
   }
 
 }

@@ -7,7 +7,7 @@ describe("Eliminar Parque", () => {
   let page: AppPage;
   let navBar: NavbarPage;
   let listarParques: ListarParques;
-  const PARQUE_ELIMINADO = "El parque ha sido eliminado";
+  const PARQUE_ELIMINADO = "";
 
   beforeEach(() => {
     page = new AppPage();
@@ -27,7 +27,9 @@ describe("Eliminar Parque", () => {
     browser.sleep(500);
 
     //assert
-    const alerta = "El parque ha sido eliminado";
+    //const alerta = "El parque ha sido eliminado";
+    const alerta = listarParques.getTextoSwal();
+
     expect(alerta).toEqual(PARQUE_ELIMINADO);
     browser.sleep(500);
   });

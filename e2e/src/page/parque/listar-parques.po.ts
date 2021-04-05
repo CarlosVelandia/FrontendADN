@@ -6,6 +6,7 @@ export class ListarParques{
   private botonCrearParque = element.all(by.id("botonCrearParque"));
   private botonEditarParque = element.all(by.id("botonEditarParque1"));
   private botonEliminarParque = element.all(by.id("botonEliminarParque1"));
+  private swal = element(by.className('swal2-html-container'));
 
   async contarParques() {
     return this.tablaParques.count();
@@ -22,4 +23,10 @@ export class ListarParques{
   async clickBotonEliminarParque() {
     await this.botonEliminarParque.click();
   }
+
+  async getTextoSwal(): Promise<string> {
+    return await this.swal.getText();
+  }
+
+
 }

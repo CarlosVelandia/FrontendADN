@@ -6,6 +6,8 @@ export class CrearParque {
   private inputDireccion = element(by.id("direccion"));
   private inputTelefono = element(by.id("telefono"));
   private botonCreaParque = element(by.id("guardarParque"));
+  private swal = element(by.className('swal2-html-container'));
+
 
   async clickInputNombreParque() {
     await this.inputNombreParque.click();
@@ -56,5 +58,11 @@ export class CrearParque {
   async clickBotonGuardarParque() {
     await this.botonCreaParque.click();
   }
+
+  async getTextoSwal(): Promise<string> {
+    return await this.swal.getText();
+  }
+
+
 
 }
