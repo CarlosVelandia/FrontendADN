@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SwalService } from '@core/services/swal.service';
+import { Observable } from 'rxjs';
 import { Usuario } from 'src/app/feature/usuario/shared/model/Usuario';
 import { UsuarioService } from '../../shared/service/usuario.service';
 
@@ -11,14 +12,12 @@ import { UsuarioService } from '../../shared/service/usuario.service';
 })
 export class ListarUsuarioComponent implements OnInit {
 
-  usuarios: Usuario[];
+
+  public usuarios:Observable<Usuario[]>;
   constructor(private service: UsuarioService, private router: Router, protected swalService: SwalService) { }
 
   ngOnInit() {
-    this.service.getUsuarios()
-      .subscribe(data => {
-        this.usuarios = data;
-      });
+    this.usuarios = this.service.getUsuarios();
   }
 
   crearUsuario(){
@@ -31,8 +30,8 @@ export class ListarUsuarioComponent implements OnInit {
 
   deleteUsuario(usuario:Usuario){
     this.service.deleteUsuario(usuario).subscribe(()=>{
-    this.swalService.danger("Se ha eliminado el Usuario");
-    this.usuarios=this.usuarios.filter(p=>p!==usuario);
+    this.swalService.danger("Usuario eliminado correctamente");
+    this.usuarios = this.service.getUsuarios();
     })
   }
 

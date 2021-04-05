@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SwalService } from '@core/services/swal.service';
+import { Observable } from 'rxjs';
 import { Parque } from '../../shared/model/Parque';
 import { ParqueService } from '../../shared/service/parque.service';
 
@@ -11,14 +12,13 @@ import { ParqueService } from '../../shared/service/parque.service';
 })
 export class ListarParqueComponent implements OnInit {
 
-  parques:Parque[];
+  public parques:Observable<Parque[]>;
+
   constructor(private service: ParqueService, private router: Router,protected swalService: SwalService) { }
 
   ngOnInit() {
-    this.service.getParques()
-      .subscribe(data => {
-        this.parques = data;
-      });
+    this.parques = this.service.getParques();
+
   }
 
   nuevoParque(){
@@ -33,7 +33,7 @@ export class ListarParqueComponent implements OnInit {
   deleteParque(parque:Parque){
     this.service.deleteParque(parque).subscribe(()=>{
     this.swalService.danger("Parque eliminado correctamente");
-    this.parques=this.parques.filter(p=>p!==parque);
+    this.parques = this.service.getParques();
   })
   }
 

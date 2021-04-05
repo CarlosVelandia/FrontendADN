@@ -10,7 +10,7 @@
           <!-- <input [(ngModel)]="tiquete.idUsuario" name="idUsuario" type="text" class="form-control"> -->
           <select [(ngModel)]="tiquete.idUsuario" [ngModelOptions]="{standalone: true}" name="idUsuario" class="form-control" required id="idUsuario">
             <option value="" selected  disabled>Seleccionar</option>
-            <option *ngFor="let usuario of usuarios" [value]="usuario.id" id="usuarios">{{usuario.id}} - {{usuario.nombre}}</option>
+            <option *ngFor="let usuario of usuarios | async" [value]="usuario.id" id="usuarios">{{usuario.id}} - {{usuario.nombre}}</option>
           </select>
         </div>
         <div class="form-group">
@@ -18,7 +18,7 @@
             <!-- <input [(ngModel)]="tiquete.idParque" name="idParque" type="text" class="form-control"> -->
           <select [(ngModel)]="tiquete.idParque" [ngModelOptions]="{standalone: true}" class="form-control" required id="idParques" >
             <option value="" selected  disabled>Seleccionar</option>
-            <option *ngFor="let parque of parques" [value]="parque.id" id="parques">{{parque.id}} - {{parque.nombre}}</option>
+            <option *ngFor="let parque of parques | async" [value]="parque.id" id="parques">{{parque.id}} - {{parque.nombre}}</option>
           </select>
         </div>
         <div class="form-group">

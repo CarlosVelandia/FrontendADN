@@ -19,7 +19,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let usuario of usuarios" class="text-center tablaUsuarios">
+          <tr *ngFor="let usuario of usuarios | async" class="text-center tablaUsuarios">
             <td>{{usuario.id}}</td>
             <td>{{usuario.nombre}}</td>
             <td>{{usuario.cedula}}</td>

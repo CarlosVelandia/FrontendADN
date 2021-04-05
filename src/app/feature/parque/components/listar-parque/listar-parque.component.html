@@ -21,7 +21,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let parque of parques" class="text-center tablaParques">
+          <tr *ngFor="let parque of parques | async" class="text-center tablaParques">
             <td>{{parque.id}}</td>
             <td>{{parque.nombre}}</td>
             <td>{{parque.codigo}}</td>

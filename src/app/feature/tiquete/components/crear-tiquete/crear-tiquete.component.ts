@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { SwalService } from '@core/services/swal.service';
 import { Parque } from '@parque/shared/model/Parque';
 import { ParqueService } from '@parque/shared/service/parque.service';
+import { Observable } from 'rxjs';
 import { Tiquete } from 'src/app/feature/tiquete/shared/model/Tiquete';
 import { Usuario } from 'src/app/feature/usuario/shared/model/Usuario';
 import { UsuarioService } from 'src/app/feature/usuario/shared/service/usuario.service';
@@ -17,8 +18,8 @@ export class CrearTiqueteComponent implements OnInit {
 
 
   tiquete:Tiquete=new Tiquete();
-  parques:Parque[];
-  usuarios:Usuario[];
+  public parques:Observable<Parque[]>;
+  public usuarios:Observable<Usuario[]>;
 
   constructor(
     private router:Router,
@@ -30,14 +31,8 @@ export class CrearTiqueteComponent implements OnInit {
 
   ngOnInit() {
 
-    this.serviceParque.getParques()
-    .subscribe(data => {
-      this.parques = data;
-    });
-    this.serviceUsuario.getUsuarios()
-      .subscribe(data => {
-        this.usuarios = data;
-      });
+    this.parques = this.serviceParque.getParques();
+    this.usuarios = this.serviceUsuario.getUsuarios();
   }
 
   guardarTiquete(){
