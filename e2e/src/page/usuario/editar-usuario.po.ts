@@ -4,6 +4,8 @@ export class EditarUsuario {
   private inputNombreUsuario = element(by.id("nombreUsuario"));
   private inputCedula = element(by.id("cedula"));
   private botonActualizarUsuario = element(by.id("actualizarUsuario"));
+  private swal = element(by.className('swal2-title'));
+
 
   async clickInputNombre() {
     await this.inputNombreUsuario.click();
@@ -31,5 +33,10 @@ export class EditarUsuario {
   async clickBotonActualizarUsuario() {
     await this.botonActualizarUsuario.click();
   }
+
+  async getTextoSwal(): Promise<string> {
+    return await this.swal.getText();
+  }
+
 
 }

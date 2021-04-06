@@ -11,8 +11,8 @@ describe("Crear Usuario", () => {
   let crearUsuario: CrearUsuario;
   const NOMBRE = 'test';
   const CEDULA = '123456';
-  const USUARIO_CREADO = "El usuario ha sido creado";
-  const USUARIO_YA_EXISTE = "El usuario ya existe";
+  const USUARIO_CREADO = "Usuario creado correctamente";
+  const USUARIO_YA_EXISTE = "El usuario ya existe en el sistema con la cedula";
 
 
   beforeEach(() => {
@@ -41,7 +41,8 @@ describe("Crear Usuario", () => {
     crearUsuario.clickBotonGuardarUsuario();
 
     //assert
-    const alerta = "El usuario ha sido creado";
+    //const alerta = "El usuario ha sido creado";
+    const alerta = crearUsuario.getTextoSwal();
     expect(alerta).toEqual(USUARIO_CREADO);
     browser.sleep(1000);
   });
@@ -64,7 +65,8 @@ describe("Crear Usuario", () => {
       crearUsuario.clickBotonGuardarUsuario();
 
       //assert
-      const alerta = "El usuario ya existe";
+      //const alerta = "El usuario ya existe";
+      const alerta = crearUsuario.getTextoSwal();
       expect(alerta).toEqual(USUARIO_YA_EXISTE);
       browser.sleep(1000);
     });

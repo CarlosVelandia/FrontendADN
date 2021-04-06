@@ -7,7 +7,7 @@ describe("Crear Usuario", () => {
   let page: AppPage;
   let navBar: NavbarPage;
   let listarUsuarios: ListarUsuarios;
-  const USUARIO_ELIMINADO = "El usuario ha sido eliminado";
+  const USUARIO_ELIMINADO = "Usuario eliminado correctamente";
 
   beforeEach(() => {
     page = new AppPage();
@@ -27,7 +27,8 @@ describe("Crear Usuario", () => {
     browser.sleep(500);
 
     //assert
-    const alerta = "El usuario ha sido eliminado";
+    //const alerta = "El usuario ha sido eliminado";
+    const alerta = listarUsuarios.getTextoSwal();
     expect(alerta).toEqual(USUARIO_ELIMINADO);
     browser.sleep(500);
   });

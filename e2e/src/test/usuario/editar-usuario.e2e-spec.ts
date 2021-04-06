@@ -11,8 +11,8 @@ describe("Editar Usuario", () => {
   let editarUsuario: EditarUsuario
   const NOMBRE = 'test usuario';
   const CEDULA = '78901';
-  const USUARIO_CREADO = "El usuario ha sido editado";
-  const USUARIO_YA_EXISTE = "La cedula ya existe";
+  const USUARIO_CREADO = "Usuario actualizado correctamente";
+  const USUARIO_YA_EXISTE = "La cedula ya existe en el sistema";
   const CEDULA_REPETIDA = '7785699';
   const NOMBRE_ACTUALIZAR = 'Usuario dos';
 
@@ -45,7 +45,8 @@ describe("Editar Usuario", () => {
     editarUsuario.clickBotonActualizarUsuario();
 
     //assert
-    const alerta = "El usuario ha sido editado";
+    //const alerta = "El usuario ha sido editado";
+    const alerta = editarUsuario.getTextoSwal();
     expect(alerta).toEqual(USUARIO_CREADO);
     browser.sleep(300);
   });
@@ -70,7 +71,8 @@ describe("Editar Usuario", () => {
       editarUsuario.clickBotonActualizarUsuario();
 
       //assert
-      const alerta = "La cedula ya existe";
+      //const alerta = "La cedula ya existe";
+      const alerta = editarUsuario.getTextoSwal();
       expect(alerta).toEqual(USUARIO_YA_EXISTE);
       browser.sleep(300);
     });

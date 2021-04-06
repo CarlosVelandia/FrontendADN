@@ -6,6 +6,8 @@ export class ListarUsuarios{
   private tablaUsuarios = element.all(by.className("tablaUsuarios"));
   private botonEditarUsuario = element.all(by.id("botonEditarUsuario1"));
   private botonEliminarUsuario = element.all(by.id("botonEliminarUsuario1"));
+  private swal = element(by.className('swal2-title'));
+
 
   async contarUsuarios() {
     return this.tablaUsuarios.count();
@@ -21,6 +23,10 @@ export class ListarUsuarios{
 
   async clickBotonEliminarUsuario() {
     await this.botonEliminarUsuario.click();
+  }
+
+  async getTextoSwal(): Promise<string> {
+    return await this.swal.getText();
   }
 
 }

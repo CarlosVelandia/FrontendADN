@@ -7,7 +7,7 @@ describe("Eliminar Tiquete", () => {
   let page: AppPage;
   let navBar: NavbarPage;
   let listarTiquetes: ListarTiquetes;
-  const TIQUETE_ELIMINADO = "";
+  const TIQUETE_ELIMINADO = "Tiquete eliminado correctamente";
 
   beforeEach(() => {
     page = new AppPage();

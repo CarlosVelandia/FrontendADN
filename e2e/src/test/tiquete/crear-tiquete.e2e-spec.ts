@@ -10,9 +10,9 @@ describe("Crear Tiquete", () => {
   let listarTiquetes: ListarTiquetes;
   let crearTiquete: CrearTiquete;
   const FECHA_COMPRA = "03-25-2021";
-  const TIQUETE_CREADO = "";
+  const TIQUETE_CREADO = "Tiquete creado correctamente";
   const FECHA_COMPRA_LUNES= "03-29-2021";
-  const DIA_LUNES="";
+  const DIA_LUNES="Los Lunes no se pueden vender tiquetes por mantenimiento del parque";
 
 
   beforeEach(() => {
