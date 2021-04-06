@@ -8,6 +8,7 @@ describe("Eliminar Parque", () => {
   let navBar: NavbarPage;
   let listarParques: ListarParques;
   const PARQUE_ELIMINADO = "Parque eliminado correctamente";
+  const tiempo= 500;
 
   beforeEach(() => {
     page = new AppPage();
@@ -18,19 +19,19 @@ describe("Eliminar Parque", () => {
   it("Debe eliminar el Parque", () => {
   //arrange
     page.navigateTo();
-    browser.sleep(500);
+    browser.sleep(tiempo);
     navBar.clickBotonParques();
-    browser.sleep(500);
+    browser.sleep(tiempo);
 
     //act
     listarParques.clickBotonEliminarParque();
-    browser.sleep(500);
+    browser.sleep(tiempo);
 
     //assert
     //const alerta = "El parque ha sido eliminado";
     const alerta = listarParques.getTextoSwal();
 
     expect(alerta).toEqual(PARQUE_ELIMINADO);
-    browser.sleep(500);
+    browser.sleep(tiempo);
   });
 });

@@ -15,6 +15,7 @@ describe("Crear Parque", () => {
   const TELEFONO = "456789";
   const PARQUE_CREADO = "Parque creado correctamente";
   const PARQUE_YA_EXISTE = "El nombre del parque ya existe en el sistema";
+  const tiempo= 500;
 
   beforeEach(() => {
     page = new AppPage();
@@ -26,23 +27,23 @@ describe("Crear Parque", () => {
   it("Debe crear el Parque", () => {
     //arrange
     page.navigateTo();
-    browser.sleep(1000);
+    browser.sleep(tiempo);
     navBar.clickBotonParques();
-    browser.sleep(1000);
+    browser.sleep(tiempo);
     listarParques.clickBotonCrearParque();
-    browser.sleep(1000);
+    browser.sleep(tiempo);
     crearParque.clickInputNombreParque();
     crearParque.setInputNombreParque(NOMBRE);
-    browser.sleep(1000);
+    browser.sleep(tiempo);
     crearParque.clickInputCodigo();
     crearParque.setInputCodigo(CODIGO);
-    browser.sleep(1000);
+    browser.sleep(tiempo);
     crearParque.clickInputDireccion();
     crearParque.setInputDireccion(DIRECCION);
-    browser.sleep(1000);
+    browser.sleep(tiempo);
     crearParque.clickInputTelefono();
     crearParque.setInputTelefono(TELEFONO);
-    browser.sleep(1000);
+    browser.sleep(tiempo);
 
     //act
     crearParque.clickBotonGuardarParque();
@@ -52,29 +53,29 @@ describe("Crear Parque", () => {
     const alerta = crearParque.getTextoSwal();
 
     expect(alerta).toEqual(PARQUE_CREADO);
-    browser.sleep(1000);
+    browser.sleep(tiempo);
   });
 
   it("Debe retornar un error que parque ya existe ", () => {
     //arrange
     page.navigateTo();
-    browser.sleep(1000);
+    browser.sleep(tiempo);
     navBar.clickBotonParques();
-    browser.sleep(1000);
+    browser.sleep(tiempo);
     listarParques.clickBotonCrearParque();
-    browser.sleep(1000);
+    browser.sleep(tiempo);
     crearParque.clickInputNombreParque();
     crearParque.setInputNombreParque(NOMBRE);
-    browser.sleep(1000);
+    browser.sleep(tiempo);
     crearParque.clickInputCodigo();
     crearParque.setInputCodigo(CODIGO);
-    browser.sleep(1000);
+    browser.sleep(tiempo);
     crearParque.clickInputDireccion();
     crearParque.setInputDireccion(DIRECCION);
-    browser.sleep(1000);
+    browser.sleep(tiempo);
     crearParque.clickInputTelefono();
     crearParque.setInputTelefono(TELEFONO);
-    browser.sleep(1000);
+    browser.sleep(tiempo);
 
     //act
     crearParque.clickBotonGuardarParque();
@@ -84,6 +85,6 @@ describe("Crear Parque", () => {
     const alerta = crearParque.getTextoSwal();
 
     expect(alerta).toEqual(PARQUE_YA_EXISTE);
-    browser.sleep(1000);
+    browser.sleep(tiempo);
   });
 });
