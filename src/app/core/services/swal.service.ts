@@ -19,6 +19,7 @@ export class SwalService {
 
   succes(title: string): void {
     Swal.mixin({
+      title,
       toast: true,
       position: 'top-end',
       showConfirmButton: false,
@@ -36,6 +37,7 @@ export class SwalService {
 
   danger(title: string): void {
     Swal.mixin({
+      title,
       toast: true,
       position: 'top-end',
       showConfirmButton: false,

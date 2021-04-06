@@ -6,7 +6,7 @@ export class ListarParques{
   private botonCrearParque = element.all(by.id("botonCrearParque"));
   private botonEditarParque = element.all(by.id("botonEditarParque1"));
   private botonEliminarParque = element.all(by.id("botonEliminarParque1"));
-  private swal = element(by.className('swal2-html-container'));
+  private swal = element(by.className('swal2-title'));
 
   async contarParques() {
     return this.tablaParques.count();

@@ -7,7 +7,7 @@ export class CrearTiquete {
   private botonCreaTiquete = element(by.id("guardarTiquete"));
   private seleccionUsuario = element.all(by.id("usuarios"));
   private seleccionParque = element.all(by.id("parques"));
-  private swal = element(by.className('swal2-html-container'));
+  private swal = element(by.className('swal2-title'));
 
 
   async clickInputIdUsuario() {

@@ -13,8 +13,8 @@ describe("Crear Parque", () => {
   const CODIGO = "987654";
   const DIRECCION = "Calle 1 # 2-3";
   const TELEFONO = "456789";
-  const PARQUE_CREADO = "";
-  const PARQUE_YA_EXISTE = "";
+  const PARQUE_CREADO = "Parque creado correctamente";
+  const PARQUE_YA_EXISTE = "El nombre del parque ya existe en el sistema";
 
   beforeEach(() => {
     page = new AppPage();

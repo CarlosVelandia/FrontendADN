@@ -6,7 +6,7 @@ export class EditarParque {
   private inputDireccion = element(by.id("direccion"));
   private inputTelefono = element(by.id("telefono"));
   private botonActualizarParque = element(by.id("actualizarParque"));
-  private swal = element(by.className('swal2-html-container'));
+  private swal = element(by.className('swal2-title'));
 
 
   async clickInputNombre() {

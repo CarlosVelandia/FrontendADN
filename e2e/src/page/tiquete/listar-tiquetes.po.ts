@@ -6,7 +6,7 @@ export class ListarTiquetes{
   private botonCrearTiquete = element.all(by.id("botonCrearTiquete"));
   private botonEditarTiquete = element.all(by.id("botonEditarTiquete3"));
   private botonEliminarTiquete = element.all(by.id("botonEliminarTiquete3"));
-  private swal = element(by.className('swal2-html-container'));
+  private swal = element(by.className('swal2-title'));
 
 
   async contarTiquetes() {

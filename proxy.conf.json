@@ -1,8 +1,9 @@
 {
   "/tiquetes-parque-diversiones/*": {
     "target": "http://localhost:8084",
+    "timeout": 3000000,
     "secure" : false,
-    "changeOrigin": true
+    "changeOrigin": false,
+    "logLevel": "debug"
   }
-
 }

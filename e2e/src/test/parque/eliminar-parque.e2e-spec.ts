@@ -7,7 +7,7 @@ describe("Eliminar Parque", () => {
   let page: AppPage;
   let navBar: NavbarPage;
   let listarParques: ListarParques;
-  const PARQUE_ELIMINADO = "";
+  const PARQUE_ELIMINADO = "Parque eliminado correctamente";
 
   beforeEach(() => {
     page = new AppPage();

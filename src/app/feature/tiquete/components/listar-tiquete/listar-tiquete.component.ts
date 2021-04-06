@@ -16,6 +16,7 @@ import { TiqueteService } from '../../shared/service/tiquete.service';
 export class ListarTiqueteComponent implements OnInit {
 
   public tiquetes:Observable<Tiquete[]>;
+
   constructor(private service: TiqueteService, private router: Router, protected swalService: SwalService) { }
 
   ngOnInit() {
@@ -33,7 +34,7 @@ export class ListarTiqueteComponent implements OnInit {
 
   deleteTiquete(tiquete:Tiquete){
     this.service.deleteTiquete(tiquete).subscribe(()=>{
-    this.swalService.danger("Se ha eliminado el Tiquete");
+    this.swalService.danger("Tiquete eliminado correctamente");
     this.tiquetes = this.service.getTiquetes();
    })
   }
